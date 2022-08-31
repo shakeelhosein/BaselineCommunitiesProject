@@ -46,7 +46,7 @@ def separte_coms(all_coms):
             boundary = arcpy.SelectLayerByAttribute_management('all_coms_layer', 'NEW_SELECTION', 'OBJECTID = {}'.format(row[0]))
             arcpy.analysis.Clip(points_layer, boundary, re.sub(pattern, '_', '{}_Building_Baseline_'.format(row[2])), None)
             arcpy.analysis.Clip(roads_layer, boundary, re.sub(pattern, '_', '{}_Roads_'.format(row[2])), None)
-            print("{}_roads_complete".format(row[2]))
+            print("{}_Community_complete".format(row[2]))
 
 
 separte_coms(master_layer)
